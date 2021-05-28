@@ -20,8 +20,11 @@ export default {
     return this.queues.forEach(queue => {
       queue.bull.process(queue.handle);
 
-      queue.bull.on('failed', (job) => {
+      queue.bull.on('failed', (job, err) => {
+        // Sentry.captureException(err); // Caso queira integrar com o Sentry
+
         console.log('Job failed', queue.key, job.data);
+        console.log('Error', err);
       });
     })
   }
