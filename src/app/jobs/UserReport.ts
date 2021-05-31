@@ -1,6 +1,6 @@
 export default {
   key: 'UserReport',
-  async handle({ data }) {
+  async handle({ data }: any) {
     const { user } = data;
 
     console.log(user);

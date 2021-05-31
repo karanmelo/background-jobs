@@ -1,13 +1,13 @@
 {
   "name": "queuenode",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.ts",
   "author": "Karan Melo",
   "license": "MIT",
   "scripts": {
     "dev": "npm-run-all -p dev:*",
-    "dev:server": "nodemon src/server.js",
-    "dev:queue": "nodemon src/queue.js",
+    "dev:server": "nodemon --watch \"src/**/*.ts\" --ignore \"node_modules/**/*\" --exec ts-node src/server.ts",
+    "dev:queue": "nodemon --watch \"src/**/*.ts\" --ignore \"node_modules/**/*\" --exec ts-node src/queue.ts",
     "redis": "docker run --name redis -p 6379:6379 -d -t redis:alpine"
   },
   "dependencies": {
@@ -18,8 +18,13 @@
     "nodemailer": "^6.6.1"
   },
   "devDependencies": {
+    "@types/bull": "^3.15.1",
+    "@types/node": "^15.6.1",
+    "@types/nodemailer": "^6.4.2",
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
-    "sucrase": "^3.18.1"
+    "sucrase": "^3.18.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
   }
 }
