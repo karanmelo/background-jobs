@@ -7,8 +7,7 @@ const queues = Object.values(jobs).map(job => ({
   bull: new Queue(job.key, redisConfig as QueueOptions),
   name: job.key,
   handle: job.handle,
-  //@ts-ignore
-  options: job.options,
+  options: job.options
 }));
 
 export default {
@@ -25,9 +24,8 @@ export default {
       queue.bull.process(queue.handle);
 
       queue.bull.on('failed', (job, err) => {
-        // Sentry.captureException(err); // Caso queira integrar com o Sentry
-        //@ts-ignore
-        console.log('Job failed', queue.key, job.data);
+        // Sentry.captureException(err); // Caso queira integrar com o Sentry 
+        console.log('Job failed', queue.name, job.data);
         console.log('Error', err);
       });
     })

@@ -11,5 +11,8 @@ export default {
       subject: 'Cadastro de Usuário',
       html: `Olá, ${name}, bem vindo ao sistema de filas :D`
     });
-  }
+
+    console.log('E-mail successfully sent.')
+  },
+  options: null
 }

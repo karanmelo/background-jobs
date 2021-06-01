@@ -4,5 +4,6 @@ export default {
     const { user } = data;
 
     console.log(user);
-  }
+  },
+  options: null
 }
