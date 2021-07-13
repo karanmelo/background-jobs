@@ -1,5 +1,5 @@
 {
-  "name": "queuenode",
+  "name": "queue-node-mail",
   "version": "1.0.0",
   "main": "server.ts",
   "author": "Karan Melo",
