@@ -4,6 +4,10 @@
   "main": "server.ts",
   "author": "Karan Melo",
   "license": "MIT",
+  "engines": {
+    "node": ">=14.x",
+    "yarn": ">=1.x"
+  },
   "scripts": {
     "dev": "npm-run-all -p dev:*",
     "dev:server": "nodemon --watch \"src/**/*.ts\" --ignore \"node_modules/**/*\" --exec ts-node src/server.ts",
