@@ -1,5 +1,5 @@
 {
-  "name": "queue-node-mail",
+  "name": "background-jobs",
   "version": "1.0.0",
   "main": "server.ts",
   "author": "Karan Melo",
